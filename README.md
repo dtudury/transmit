@@ -1,7 +1,20 @@
 # transmit
 idea for streaming changing object data
 
-starting prefixes:
+transmit-stream = (index : prefix : value) : transmit-stream | nothing
+: = concat
+| = select
+
+index = (1 byte >= 128 : bytes * count(leading ones) | 1 byte < 128)
+    if the byte is 255 then add 8 to the count of leading ones on the next byte
+value = stream of bytes with length defined by prefix
+
+predefined prefixes:
+
+127 - nothing
+0 - zero
+1 - anything
+X - typedef:typedef (this-prefix : length : other-prefix)
 
 0 - value: type:boolean value:false
 1 - value: type:boolean value:true
