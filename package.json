@@ -1,0 +1,26 @@
+{
+  "name": "transmit",
+  "version": "0.0.0",
+  "description": "streaming object data changes as a tree with it's root-node in the future (we won't hash, we'll just count nodes and store new data in a stack at index == count)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtudury/transmit.git"
+  },
+  "author": "David Tudury <david.tudury@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dtudury/transmit/issues"
+  },
+  "homepage": "https://github.com/dtudury/transmit#readme",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.16.0"
+  }
+}
