@@ -4,11 +4,28 @@ streaming object data changes as a tree with it's root-node in the future (we wo
 ## idea notepad
 this is just scribbles... hoping to summon terms to help with thinking about it and expressing it.
 
-transmit-stream = (index , prefix , value) , transmit-stream | nothing
-, = concat
-| = select
+* , = concat
+* | = select
 
-parser-state(values-consumed):parser-effect
+* transmit-stream = transmission, transmit-stream | zero
+* transmission = change_index, statements
+* change_index = goldfish-identifier
+* goldfish-identifier = *see below*
+* statements = zero | (statement, statements)
+* statement = storage_index, expression
+* storage_index = goldfish-identifier
+* expression = type, bytes
+
+### goldfish-identifier
+* first 128 (2^7) identifiers take up 1 bytes
+  * 0000,0000 - 0111,1111
+* next 16,384 (2^14) identifiers take up 2 bytes
+  * 1000,0000,0000,0000 - 1011,1111,1111,1111
+* next 2,097,152 (2^21) identifiers take up 3 bytes
+  * 1100,0000,0000,0000,0000,0000 - 1101,1111,1111,1111,1111,1111
+* etc. The leading number of ones is how many more bytes to read
+
+### parser-state(values-consumed):parser-effect
 * store(key, value):null
 * false():pop
 * true():pop
