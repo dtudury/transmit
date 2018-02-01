@@ -17,6 +17,7 @@ this is just scribbles... hoping to summon terms to help with thinking about it 
 * expression = type, bytes
 
 ### goldfish-identifier
+a numbering system that takes up more bytes as needed (but it wastes a bit per byte to do so)
 * first 128 (2^7) identifiers take up 1 bytes
   * 0000,0000 - 0111,1111
 * next 16,384 (2^14) identifiers take up 2 bytes
@@ -24,6 +25,8 @@ this is just scribbles... hoping to summon terms to help with thinking about it 
 * next 2,097,152 (2^21) identifiers take up 3 bytes
   * 1100,0000,0000,0000,0000,0000 - 1101,1111,1111,1111,1111,1111
 * etc. The leading number of ones is how many more bytes to read
+
+...or maybe it would be better to mark
 
 ### parser-state(values-consumed):parser-effect
 * store(key, value):null

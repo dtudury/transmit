@@ -19,3 +19,18 @@ let stream = Uint8Array.from([
 stream.forEach(byte => {
     read_stream = read_stream(byte);
 });
+
+
+/*
+let Goldfish = require("./lib/Goldfish");
+
+let gf = new Goldfish();
+
+for( var i = 0; i < 130; i++) {
+    gf.inc();
+    console.log(gf.toString());
+}
+
+gf = Goldfish.fromInt(130);
+console.log(gf.toString());
+*/
